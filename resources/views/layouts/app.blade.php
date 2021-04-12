@@ -34,7 +34,28 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Ruby</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Rails</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">PHP</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Laravel</a>
+                            </li>
+                        @guest
 
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('blogs.create') }}">Create blog</a>
+                            </li>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->

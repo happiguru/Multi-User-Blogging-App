@@ -22,4 +22,22 @@ class BlogsController extends Controller
         $blog = Blog::create($input);
         return redirect('/blogs');
     }
+
+    public function show($id){
+        $blog = Blog::findOrFail($id);
+        return view('blogs.show', compact('blog'));
+    }
+
+    public function edit($id){
+        $blog = Blog::findOrFail($id);
+        return view('blogs.edit', compact('blog'));
+    }
+
+    public function update(Request $request, $id){
+        $input = $request->all();
+        $blog = Blog::findOrFail($id);
+        $blog->update($input);
+        return view('blogs.show', compact('blog'));
+        // return redirect('blogs');
+    }
 }
