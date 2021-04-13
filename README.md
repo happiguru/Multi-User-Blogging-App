@@ -5,7 +5,7 @@ In this project I build a RESTFUL API/CRUD application using laravel.
 This project was built with:
 
 - PHP. v7.2.3
-- Laravel 8*
+- Laravel 5.6.*
 - Composer 2.0
 
 ## 🛠 Getting Started
