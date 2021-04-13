@@ -49,14 +49,14 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Laravel</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.index') }}">Admin</a>
+                            </li>
                         @guest
 
                         @else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('blogs.create') }}">Create blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.index') }}">Admin</a>
                             </li>
                         @endguest
                     </ul>
