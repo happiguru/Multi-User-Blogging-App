@@ -46,4 +46,9 @@ class BlogsController extends Controller
         $blog->delete();
         return redirect('blogs');
     }
+
+    public function trash(){
+        $trashedBlogs = Blog::onlyTrashed()->get();
+        return view('blogs.trash', compact('trashedBlogs'));
+    }
 }

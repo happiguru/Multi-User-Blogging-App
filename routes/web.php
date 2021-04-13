@@ -16,6 +16,9 @@ Route::get('/', 'BlogsController@index');
 Route::get('/blogs', 'BlogsController@index')->name('blogs');
 Route::get('/blogs/create', 'BlogsController@create')->name('blogs.create');
 Route::post('/blogs/store', 'BlogsController@store')->name('blogs.store');
+// Trashed routes here
+Route::get('/blogs/trash', 'BlogsController@trash')->name('blogs.trash');
+
 Route::get('/blogs/{id}', 'BlogsController@show')->name('blogs.show');
 Route::get('/blogs/{id}/edit', 'BlogsController@edit')->name('blogs.edit');
 Route::patch('/blogs/{id}/update', 'BlogsController@update')->name('blogs.update');
