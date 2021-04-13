@@ -1,6 +1,10 @@
-# Happi_Blog Built With Laravel (PHP, Mysql)
+# Multi User Blogging App Built With Laravel (PHP, Mysql)
 
 In this project I build a RESTFUL API/CRUD application using laravel.
+- Admin Dashboard
+- Multi Roles
+- Authentication
+- Eloquent and more
 
 This project was built with:
 
