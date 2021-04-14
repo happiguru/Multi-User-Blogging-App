@@ -2,6 +2,9 @@
 
 @section('content')
 
+@include('partials.meta_dynamic')
+
+
     <div class="container-fluid">
         <article>
             <div class="jumbotron">
