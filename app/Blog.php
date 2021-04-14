@@ -9,7 +9,7 @@ class Blog extends Model
 {
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-    protected $fillable = ['title', 'body'];
+    protected $fillable = ['title', 'body', 'featured_image'];
 
     public function category(){
         return $this->belongsToMany(Category::class);

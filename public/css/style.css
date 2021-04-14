@@ -1,3 +1,10 @@
 .jumbotron {
     background-color: aliceblue;
 }
+
+.featured_image {
+    width: 100%;
+    height: 250px;
+    margin: 0;
+    border-radius: 10px;
+  }

@@ -6,6 +6,11 @@
         <article>
             <div class="jumbotron">
                 <div class="container">
+                    <div class="banner border">
+                        @if($blog->featured_image)
+                            <img class="img-responsive featured_image" src="/images/featured_image/{{ $blog->featured_image ?$blog->featured_image : '' }}" alt="{{ str_limit($blog->title, 50) }}">
+                        @endif
+                    </div>
                     <h1>{{ $blog->title }}</h1>
                     <p>
                         <strong>Categories: </strong>

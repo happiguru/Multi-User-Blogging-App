@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8">
-                <form action="{{ route('blogs.store') }}" method="post">
+                <form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="title">Title</label>
