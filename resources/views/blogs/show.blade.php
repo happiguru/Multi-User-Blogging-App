@@ -7,6 +7,12 @@
             <div class="jumbotron">
                 <div class="container">
                     <h1>{{ $blog->title }}</h1>
+                    <p>
+                        <strong>Categories: </strong>
+                        @foreach($blog->category as $category)
+                         <span><a href="{{ route('categories.show', $category->slug) }}">{{ $category->name }}</a> |</span>
+                        @endforeach
+                    </p>
                     <div class="d-flex">
                     @guest
 

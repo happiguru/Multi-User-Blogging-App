@@ -23,8 +23,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <p class="container"></p>
+            <div class="container border">
+                <p class="col-md-12">
+                    @foreach($category->blog as $blog)
+                        <h3 class="my-3"><a href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a></h3>
+                    @endforeach
+                
+                </p>
             </div>
         </article>
     </div>

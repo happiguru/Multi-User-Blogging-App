@@ -10,7 +10,7 @@ class BlogsController extends Controller
 {
     //
     public function index(){
-        $blogs=Blog::all();
+        $blogs=Blog::latest()->paginate(5);
         return view('blogs.index', compact('blogs'));
     }
 
@@ -35,14 +35,19 @@ class BlogsController extends Controller
     }
 
     public function edit($id){
+        $categories = Category::latest()->get();
         $blog = Blog::findOrFail($id);
-        return view('blogs.edit', compact('blog'));
+        return view('blogs.edit', ['blog'=> $blog, 'categories' => $categories]);
     }
 
     public function update(Request $request, $id){
         $input = $request->all();
         $blog = Blog::findOrFail($id);
         $blog->update($input);
+        //sync with categories
+        if($request->category_id){
+            $blog->category()->sync($request->category_id);
+        }
         return view('blogs.show', compact('blog'));
         // return redirect('blogs');
     }

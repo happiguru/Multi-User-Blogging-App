@@ -20,6 +20,14 @@
                         <label for="body">Title</label>
                         <textarea name="body" id="" class="form-control">{{ $blog->body }}</textarea>
                     </div>
+                    <p>Choose Category</p>
+                    <div class="form-group form-check form-check-inline">
+                        @foreach($categories as $category)
+                            <input type="checkbox" value="{{ $category->id }}" name="category_id[]" 
+                            class="form-check-input">
+                            <label for="" class="form-check-label mx-1">{{ $category->name }}</label>
+                        @endforeach
+                    </div>
                     <div class="form-group">
                         <button class="btn btn-sm btn-primary" type="submit">Update</button>
                     </div>
