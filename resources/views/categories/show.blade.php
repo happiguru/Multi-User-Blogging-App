@@ -13,7 +13,11 @@
                     @else
                         <span class="mr-2"><a class="btn btn-primary btn-sm" href="{{ route('categories.edit', $category->id) }}">Edit</a></span>
                         <span>
-                            
+                        <form action="{{ route('categories.destroy', $category->id) }}" method="post">
+                                {{ method_field('delete') }}
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                {{ csrf_field() }}
+                            </form>
                         </span>
                     @endguest
                     </div>
