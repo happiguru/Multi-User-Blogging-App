@@ -38,20 +38,21 @@
                                 <a class="nav-link" href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Ruby</a>
+                                <a class="nav-link" href="http://localhost:8000/categories/html">HTML</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Rails</a>
+                                <a class="nav-link" href="http://localhost:8000/categories/css">CSS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">PHP</a>
+                                <a class="nav-link" href="http://localhost:8000/categories/ruby-on-rails">Rails</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Laravel</a>
+                                <a class="nav-link" href="http://localhost:8000/categories/php">PHP</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.index') }}">Admin</a>
+                                <a class="nav-link" href="http://localhost:8000/categories/laravel">Laravel</a>
                             </li>
+                            
                         @guest
 
                         @else
@@ -83,6 +84,9 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('categories.index') }}">Categories</a>
+                                    <a class="dropdown-item" href="{{ route('admin.index') }}">Admin</a>
+                           
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

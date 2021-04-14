@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
+use App\Category;
 
 class BlogsController extends Controller
 {
@@ -14,12 +15,17 @@ class BlogsController extends Controller
     }
 
     public function create(){
-        return view('blogs.create');
+        $categories = Category::latest()->get();
+        return view('blogs.create', compact('categories'));
     }
 
     public function store(Request $request){
         $input = $request->all();
         $blog = Blog::create($input);
+        //sync with categories
+        if($request->category_id){
+            $blog->category()->sync($request->category_id);
+        }
         return redirect('/blogs');
     }
 
