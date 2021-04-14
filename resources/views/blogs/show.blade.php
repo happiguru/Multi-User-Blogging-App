@@ -2,7 +2,9 @@
 
 @section('content')
 
-@include('partials.meta_dynamic')
+{{-- @include('partials.meta_dynamic') --}}
+@section('meta_title') {{ $blog->meta_title }} @endsection
+@section('meta_description') {{ $blog->meta_description }} @endsection
 
 
     <div class="container-fluid">
@@ -38,7 +40,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <p class="container">{{ $blog->body }}</p>
+                <article class="container">{!! $blog->body !!}</article>
             </div>
         </article>
     </div>

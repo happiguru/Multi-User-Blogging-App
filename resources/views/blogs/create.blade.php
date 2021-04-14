@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('partials.tinymce')
     <div class="jumbotron">
                     <div class="container">
                         <h1>Create a new blog</h1>
@@ -17,7 +18,7 @@
                     </div>
                     <div class="form-group">
                         <label for="body">Title</label>
-                        <textarea name="body" id="" class="form-control"></textarea>
+                        <textarea name="body" id="mytextarea" class="form-control"></textarea>
                     </div>
                     <p>Choose Category</p>
                     <div class="form-group form-check form-check-inline">

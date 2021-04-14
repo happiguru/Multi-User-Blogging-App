@@ -9,7 +9,7 @@
         <div class="col-12 col-md-8">
             @foreach($blogs as $blog)
                 <h2><a href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a></h2>
-                <p>{{ $blog->body }}</p>
+                {!! $blog->body !!}
             @endforeach
         </div>
         <div class="col-12 col-md-4 border">
