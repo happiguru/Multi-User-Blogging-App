@@ -28,6 +28,10 @@
                         @endforeach
                     </div>
                     <div class="form-group">
+                        <label for="featured_image">Featured Image</label><br>
+                        <input type="file" name="featured_image">
+                    </div>
+                    <div class="form-group">
                         <button class="btn btn-md btn-primary" type="submit">Submit Blog</button>
                     </div>
                 </form>
