@@ -22,7 +22,17 @@
                     </div>
                     <p>Choose Category</p>
                     <div class="form-group form-check form-check-inline">
-                        @foreach($categories as $category)
+                       <strong>{{ $blog->category->count() ? 'Used ' : '' }} &nbsp;</strong> 
+                        @foreach($blog->category as $category)
+                            <input type="checkbox" value="{{ $category->id }}" name="category_id[]" 
+                            class="form-check-input" checked>
+                            <label for="" class="form-check-label mx-1">{{ $category->name }}</label>
+                        @endforeach
+                    </div>
+
+                    <div class="form-group form-check form-check-inline">
+                        <strong class="text-danger">{{ $filtered->count() ? 'Unused ' : '' }} &nbsp;</strong>
+                        @foreach($filtered as $category)
                             <input type="checkbox" value="{{ $category->id }}" name="category_id[]" 
                             class="form-check-input">
                             <label for="" class="form-check-label mx-1">{{ $category->name }}</label>
