@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-12">
             <div class="container">
-                <form action="{{ route('blogs.update', $blog->id) }}" method="post">
+                <form action="{{ route('blogs.update', $blog->id) }}" method="post" enctype="multipart/form-data">
                     {{ method_field('patch') }}
                     <div class="form-group">
                         <label for="title">Title</label>
@@ -37,6 +37,10 @@
                             class="form-check-input">
                             <label for="" class="form-check-label mx-1">{{ $category->name }}</label>
                         @endforeach
+                    </div>
+                    <div class="form-group">
+                        <label for="featured_image">Featured Image</label><br>
+                        <input type="file" name="featured_image">
                     </div>
                     <div class="form-group">
                         <button class="btn btn-sm btn-primary" type="submit">Update</button>

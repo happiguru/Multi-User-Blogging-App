@@ -43,7 +43,6 @@ class BlogsController extends Controller
     public function edit($id){
         $categories = Category::latest()->get();
         $blog = Blog::findOrFail($id);
-
         $blogCategories = array();
         foreach($blog->category as $category){
             $blogCategories[] = $category->id -1;
@@ -57,6 +56,13 @@ class BlogsController extends Controller
     public function update(Request $request, $id){
         $input = $request->all();
         $blog = Blog::findOrFail($id);
+
+        if($file = $request->file('featured_image')){
+            $name = uniqid().$file->getClientOriginalName();
+            $file->move('images/featured_image', $name);
+            $input['featured_image'] = $name;
+        }
+        
         $blog->update($input);
         //sync with categories
         if($request->category_id){
