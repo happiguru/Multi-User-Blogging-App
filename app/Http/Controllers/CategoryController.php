@@ -45,6 +45,7 @@ class CategoryController extends Controller
         ]);
         return back();
     }
+    
 
     /**
      * Display the specified resource.
@@ -52,9 +53,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
         //
+        $category = Category::where('slug', $slug)->first();
+        return view('categories.show', compact('category'));
     }
 
     /**
@@ -66,6 +69,8 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
+        $category = Category::findOrFail($id);
+        return view('categories.edit', compact('category'));
     }
 
     /**

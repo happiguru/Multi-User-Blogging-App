@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-12 col-md-8">
             @foreach($categories as $category)
-                <h2><a href="#">{{ $category->name }}</a></h2>
+                <h2><a href="{{ route('categories.show', $category->slug) }}">{{ $category->name }}</a></h2>
             @endforeach
         </div>
         <div class="col-12 col-md-4 border">
