@@ -83,6 +83,11 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $category = Category::findOrFail($id);
+        $category->name = $request->name;
+        $category->slug = str_slug($request->name, '-');
+        $category->save();
+        return redirect('categories');
     }
 
     /**
