@@ -18,14 +18,26 @@ class CategoryTableSeeder extends Seeder
         $html->slug ='html';
         $html->save();
 
+        $css = new Category();
+        $css->name ='CSS';
+        $css->slug ='css';
+        $css->save();
+
         $php = new Category();
         $php->name ='PHP';
         $php->slug ='php';
         $php->save();
 
-        $css = new Category();
-        $css->name ='CSS';
-        $css->slug ='css';
-        $css->save();
+        $laravel = new Category();
+        $laravel->name ='Laravel';
+        $laravel->slug ='laravel';
+        $laravel->save();
+        
+        $ror = new Category();
+        $ror->name ='Ruby on Rails';
+        $ror->slug ='ruby-on-rails';
+        $ror->save();
+
+        
     }
 }

@@ -16,7 +16,7 @@ class CategoryController extends Controller
     {
         //
         $categories = Category::latest()->get();
-        return view('categories.index', ['categories', $categories]);
+        return view('categories.index', ['categories' => $categories]);
     }
 
     /**
