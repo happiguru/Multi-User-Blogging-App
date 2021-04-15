@@ -9,7 +9,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-9">
                 <form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
@@ -37,7 +37,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-3">
                 <h2>Side Bar</h2>
             </div>
         </div>

@@ -17,7 +17,7 @@
                         <input type="text" name="title" id="" class="form-control" value="{{ $blog->title }}">
                     </div>
                     <div class="form-group">
-                        <label for="body">Title</label>
+                        <label for="body">Blog Content</label>
                         <textarea name="body" id="mytextarea" class="form-control">{{ $blog->body }}</textarea>
                     </div>
                     <p>Choose Category</p>
