@@ -35,3 +35,6 @@ Route::get('/admin', 'AdminController@index')->name('admin.index');
 
 // route resource
 Route::resource('categories', 'CategoryController');
+// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+//     \UniSharp\LaravelFilemanager\Lfm::routes();
+// });

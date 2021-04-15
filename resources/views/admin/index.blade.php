@@ -24,10 +24,13 @@
                             <a href="{{ route('blogs.create') }}" class="text-light">Create Blog</a>
                         </button>
 
-                        <button class="btn btn-danger btn-medium">
+                        <button class="btn btn-danger btn-medium mb-2">
                             <a href="{{ route('blogs.trash') }}" class="text-light">Trashed Blog</a>
                         </button>
-                    </div>
+                        <button class="btn btn-danger btn-medium">
+                            <a href="http://localhost:8000/laravel-filemanager" class="text-light">File Manager</a>
+                        </button>
+                      </div>
                 </aside>
                 <div class="col-12 col-md-9">
                     <h3>Hello</h3>

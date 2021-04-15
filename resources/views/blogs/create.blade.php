@@ -17,7 +17,7 @@
                         <input type="text" name="title" id="" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="body">Title</label>
+                        <label for="body">Body</label>
                         <textarea name="body" id="mytextarea" class="form-control"></textarea>
                     </div>
                     <p>Choose Category</p>
