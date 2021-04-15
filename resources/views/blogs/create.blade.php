@@ -2,14 +2,12 @@
 
 @section('content')
 @include('partials.tinymce')
-    <div class="jumbotron">
-                    <div class="container">
-                        <h1>Create a new blog</h1>
-                    </div>
-    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-9">
+                <h2 class="">Create a new blog</h2>
+                <hr>
                 <form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
@@ -39,6 +37,7 @@
             </div>
             <div class="col-12 col-md-3">
                 <h2>Side Bar</h2>
+                <hr>
             </div>
         </div>
     </div>

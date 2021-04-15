@@ -1,15 +1,18 @@
 @extends('layouts.app')
 
-@section('content')
-
 @include('partials.meta_static')
+
+@section('content')
 
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-9">
             @foreach($blogs as $blog)
-                <h2><a href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a></h2>
-                {!! $blog->body !!}
+                <article>
+                    <h2><a href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a></h2>
+                    <p> {!! str_limit($blog->body, 1000) !!} </p>
+                    <a class="btn btn-md btn-primary text-white" href="{{ route('blogs.show', $blog->id) }}">Click to read More...</a>
+                </article>
             @endforeach
         </div>
         <div class="col-12 col-md-3">

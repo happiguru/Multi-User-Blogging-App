@@ -1,11 +1,8 @@
 @extends('layouts.app')
 
+@include('partials.meta_dynamic')
+
 @section('content')
-
-{{-- @include('partials.meta_dynamic') --}}
-@section('meta_title') {{ $blog->meta_title }} @endsection
-@section('meta_description') {{ $blog->meta_description }} @endsection
-
 
     <div class="container">
         <div class="row">
@@ -43,11 +40,11 @@
                 
             </article>
             <aside class="col-12 col-md-3">
-                <h2>Recent Posts</h2>
-                <hr>
-                <div>
-                    
-                </div>
+            <h2>Recent Posts</h2>
+            <hr>
+            <div>
+                
+            </div>
             </aside>
         </div>
     </div>

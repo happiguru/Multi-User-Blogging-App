@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Blog;
+use App\Category;
 use View;
 
 class ComposerServiceProvider extends ServiceProvider
@@ -17,7 +18,8 @@ class ComposerServiceProvider extends ServiceProvider
     {
         //
         View::composer(['partials.meta_dynamic', 'layouts.nav'], function($view){
-            $view->with('blog', Blog::all());
+            $view->with('blogs', Blog::where('status', 1));
+            $view->with('categories', Category::all());
         });
     }
 

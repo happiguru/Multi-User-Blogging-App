@@ -10,7 +10,8 @@ class BlogsController extends Controller
 {
     //
     public function index(){
-        $blogs=Blog::latest()->paginate(5);
+        $blogs = Blog::where('status', 1)->latest()->paginate(5);
+        //$blogs=Blog::latest()->paginate(5);
         return view('blogs.index', compact('blogs'));
     }
 
@@ -30,10 +31,12 @@ class BlogsController extends Controller
             $file->move('images/featured_image', $name);
             $input['featured_image'] = $name;
         }
-        $blog = Blog::create($input);
+
+        //$blog = Blog::create($input);
+        $blogByUser = $request->user()->blogs()->create($input);
         //sync with categories
         if($request->category_id){
-            $blog->category()->sync($request->category_id);
+            $blogByUser->category()->sync($request->category_id);
         }
         return redirect('/blogs');
     }
