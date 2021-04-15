@@ -6,6 +6,8 @@ In this project I build a RESTFUL API/CRUD application using laravel.
 - Authentication
 - Eloquent and more
 
+![screenshot](screenshot.png)
+
 This project was built with:
 
 - PHP. v7.2.3
