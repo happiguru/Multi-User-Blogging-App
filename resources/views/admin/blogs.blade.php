@@ -3,14 +3,15 @@
 @include('partials.meta_static')
 
 @section('content')
+<div class="jumbotron-header mx-0 mb-4">
+    <div class="gradient-bg">
+        <h1 class="text-white">Manage Posts</h1>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-9">
-            <header>
-                <h2 class="">Manage Blogs</h2>
-                <hr>
-            </header>
             <div class="row">
                 <section class="col-12 col-md-6">
                     <h5>Published</h5>

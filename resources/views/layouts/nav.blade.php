@@ -14,6 +14,9 @@
                         <a class="nav-link nav-link-anchor" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link nav-link-anchor" href="http://localhost:8000/categories/html">HTML</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link nav-link-anchor" href="http://localhost:8000/categories/css">CSS</a>
                     </li>
                     <li class="nav-item">
@@ -54,7 +57,7 @@
                     </li>
                 @elseif(Auth::user() && Auth::user()->role_id === 3)
                     <li class="nav-item">
-                        <a class="nav-link text-primary">Subscriber</a>
+                    <a class="nav-link text-primary" href="#">Subscriber</a>
                     </li>
                 @endif
             

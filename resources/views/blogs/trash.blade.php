@@ -1,13 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="jumbotron">
-            <div class="container">
-                <h1>Trashed Blogs</h1>
-            </div>
-        </div>
+<div class="jumbotron-header mx-0">
+    <div class="gradient-bg">
+        <h1 class="text-white">Trashed Blogs</h1>
     </div>
+</div>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8">
@@ -26,7 +24,7 @@
                         {{ csrf_field() }}
                     </form>
                 </div>
-                <p>{{ $blog->body }}</p>
+                <p>{!! $blog->body !!}</p>
                 @endforeach
             </div>
             <div class="col-12 col-md-4">
