@@ -41,31 +41,15 @@
                         <a class="btn btn-sm btn-warning nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                 @else
-                @if(Auth::user() && Auth::user()->role_id === 1)
-                    <li class="nav-item">
-                        <a class="nav-link text-primary" href="{{ route('blogs.create') }}">Create blog</a>
-                    </li>    
-                    <li class="nav-item">
-                        <a class="nav-link text-primary" href="{{ route('admin.index') }}">Admin</a>
-                    </li>
-                @elseif(Auth::user() && Auth::user()->role_id === 2)
-                    <li class="nav-item">
-                        <a class="nav-link text-primary" href="{{ route('blogs.create') }}">Create blog</a>
-                    </li>    
-                    <li class="nav-item">
-                        <a class="nav-link text-primary" href="{{ route('admin.index') }}">Author</a>
-                    </li>
-                @elseif(Auth::user() && Auth::user()->role_id === 3)
-                    <li class="nav-item">
-                    <a class="nav-link text-primary" href="#">Subscriber</a>
-                    </li>
-                @endif
-            
+                    @if(Auth::user())   
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-anchor" href="{{ route('dashboard') }}">Dashboard</a>
+                        </li>
+                    @endif
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link-anchor-name" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
-
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('blogs')}}">Blogs <span class="badge bg-dark text-white">{{ $blogs->count() }}</span></a>
                             <a class="dropdown-item" href="{{ route('categories.index') }}">Categories <span class="badge bg-dark text-white">{{ $categories->count() }}</span></a>
