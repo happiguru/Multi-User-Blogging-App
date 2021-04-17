@@ -28,6 +28,9 @@
                     <li class="nav-item">
                         <a class="nav-link nav-link-anchor" href="http://localhost:8000/categories/laravel">Laravel</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-anchor" href="{{ route('contact') }}">Contact</a>
+                    </li>
             </ul>
 
             <!-- Right Side Of Navbar -->

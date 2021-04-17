@@ -17,6 +17,12 @@
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 </div>
             @endif
+            @if(Session::has('contact_form_send'))
+                <div class="alert alert-success">
+                    {{ Session::get('contact_form_send') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                </div>
+            @endif
             @foreach($blogs as $blog)
                 <article class="mb-5">
                     <h2 class="mt-3"><a href="{{ route('blogs.show', [$blog->slug]) }}">{{ $blog->title }}</a></h2>
