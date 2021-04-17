@@ -40,6 +40,9 @@
                 </article>
             <hr class="mb-5">
             @endforeach
+            <div class="d-flex justify-content-center">
+               <span class="">{!! $blogs->links() !!}</span> 
+            </div>
         </div>
         <div class="col-12 col-md-3">
             @include('partials.right-side-bar')

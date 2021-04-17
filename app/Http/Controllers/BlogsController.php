@@ -19,7 +19,7 @@ class BlogsController extends Controller
 
     //
     public function index(){
-        $blogs = Blog::where('status', 1)->latest()->paginate(5);
+        $blogs = Blog::where('status', 1)->latest()->paginate(1);
         // $blogs=Blog::latest()->paginate(5);
         // $blogs=Blog::latest()->get();
         return view('blogs.index', compact('blogs'));
