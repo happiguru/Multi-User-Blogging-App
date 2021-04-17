@@ -8,13 +8,10 @@
     </div>
 </div>
 <div class="container-fluid">
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Edit blog</h1>
-        </div>
-    </div>
     <div class="col-md-12">
         <div class="container">
+            <br>
+            @include('partials.error-message')
             <form action="{{ route('blogs.update', $blog->id) }}" method="post" enctype="multipart/form-data">
                 {{ method_field('patch') }}
                 <div class="form-group">

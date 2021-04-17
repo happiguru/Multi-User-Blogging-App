@@ -11,9 +11,18 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-9">
+            @if(Session::has('blog_created_message'))
+                <div class="alert alert-success">
+                    {{ Session::get('blog_created_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                </div>
+            @endif
             @foreach($blogs as $blog)
                 <article class="mb-5">
-                    <h2 class="my-3"><a href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a></h2>
+                    <h2 class="mt-3"><a href="{{ route('blogs.show', [$blog->slug]) }}">{{ $blog->title }}</a></h2>
+                    @if($blog->user)
+                        Author: <a href="{{ route('users.show', $blog->user->name) }}">{{ $blog->user->name }}</a> Posted: {{ $blog->created_at->diffFOrHumans() }}
+                    @endif
                     <hr>
                     <div class="banner">
                         @if($blog->featured_image)
@@ -21,30 +30,13 @@
                         @endif
                     </div>
                     <p> {!! str_limit($blog->body, 200) !!} </p>
-                    <a class="btn btn-md btn-primary text-white ml-auto" href="{{ route('blogs.show', $blog->id) }}">Click to read More...</a>
+                    <a class="btn btn-md btn-primary text-white ml-auto" href="{{ route('blogs.show', $blog->slug) }}">Click to read More...</a>
                 </article>
             <hr class="mb-5">
             @endforeach
         </div>
         <div class="col-12 col-md-3">
-            <h2>Recent Posts</h2>
-            <hr>
-            <div>
-                @foreach($blogs as $blog)
-                    
-                        <div class="d-flex mb-4">
-                            <div class="col-5">
-                                @if($blog->featured_image)
-                                <a href="{{ route('blogs.show', $blog->id) }}"><img class="img-responsive blog_featured_image mt-2" height="50px" src="/images/featured_image/{{ $blog->featured_image ?$blog->featured_image : '' }}" alt="{{ str_limit($blog->title, 50) }}"></a>
-                                @endif
-                            </div>
-                            <div class="col-7 recent-post">
-                                <a class="recent-post-title" href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a>
-                            </div>
-                        </div>
-                    
-                @endforeach
-            </div>
+            @include('partials.right-side-bar')
         </div>
     
     </div>

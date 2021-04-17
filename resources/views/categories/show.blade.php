@@ -23,8 +23,12 @@
         <div class="row">
             <div class="col-12 col-md-9">
                 @foreach($category->blog as $blog)
-                    <article class="mb-5">
-                        <h2 class="my-3"><a href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a></h2>
+                    <article class="my-5">
+                        <h2 class="mt-3 mb-n1"><a href="{{ route('blogs.show', [$blog->slug]) }}">{{ $blog->title }}</a></h2>
+                        @if($blog->user)
+                            Author: <a href="{{ route('users.show', $blog->user->name) }}">{{ $blog->user->name }}</a> Posted: {{ $blog->created_at->diffFOrHumans() }}
+                        @endif
+                        <hr class="mt-n1 mb-4">
                         <div class="banner">
                             @if($blog->featured_image)
                                 <img class="img-responsive featured_image" src="/images/featured_image/{{ $blog->featured_image ?$blog->featured_image : '' }}" alt="{{ str_limit($blog->title, 50) }}">
@@ -37,7 +41,7 @@
                 @endforeach
             </div>
             <div class="col-12 col-md-3">
-                <h2>Recent Posts</h2>
+                <h2 class="mt-5">Recent Posts</h2>
                 <hr>
                 <div>
                     @foreach($category->blog as $blog)

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use Illuminate\Http\Request;
-use Session;
+use App\User;
 
-class CategoryController extends Controller
+class UserController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +18,7 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $categories = Category::latest()->get();
-        return view('categories.index', ['categories' => $categories]);
+        return view('admin.users')->with('users', User::all());
     }
 
     /**
@@ -28,7 +29,6 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('categories.create');
     }
 
     /**
@@ -39,15 +39,8 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
-        Category::create([
-            'name' =>$request['name'],
-            'slug' => str_slug($request['name'], '-'),
-        ]);
-        Session::flash('blog_created_message', 'Category created successfully!');
-        return back();
+        //
     }
-    
 
     /**
      * Display the specified resource.
@@ -55,11 +48,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($name)
     {
         //
-        $category = Category::where('slug', $slug)->first();
-        return view('categories.show', compact('category'));
+        $user = User::where('name', $name)->first();
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -71,8 +64,6 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
-        $category = Category::findOrFail($id);
-        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -85,12 +76,8 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $category = Category::findOrFail($id);
-        $category->name = $request->name;
-        $category->slug = str_slug($request->name, '-');
-        $category->save();
-        Session::flash('blog_created_message', 'Category updated successfully!');
-        return redirect('categories');
+        User::findOrFail($id)->update($request->only('role_id'));
+        return back();
     }
 
     /**
@@ -99,11 +86,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
         //
-        $category = Category::findOrFail($id);
-        $category->delete();
-        return redirect('categories');
+        $user->delete();
+        return back();
     }
 }

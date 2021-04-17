@@ -8,18 +8,21 @@
         <h1 class="text-white">Manage Posts</h1>
     </div>
 </div>
-
 <div class="container">
     <div class="row">
-        <div class="col-12 col-md-9">
+        <div class="col-12 col-md-2 border">
+        @include('partials.sidebar')
+        </div>
+        <div class="col-12 col-md-7 border">
+        <h2 class="">New blog</h2>
+            <hr>
             <div class="row">
                 <section class="col-12 col-md-6">
                     <h5>Published</h5>
-                    <article class="border">
+                    <article class="">
                         @foreach($publishedBlogs as $blog)
-                            <h2 class="px-2"><a href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a></h2>
-                            <p class="px-2"> {!! str_limit($blog->body, 100) !!} </p>
-
+                            <h2 class="px-2"><a href="{{ route('blogs.show', $blog->user->name) }}">{{ $blog->title }}</a></h2>
+                            <p class="px-2"> {!! str_limit($blog->body, 50) !!} </p>
                             <form action="{{ route('blogs.update', $blog->id) }}" method="post" enctype="multipart/form-data">
                                 {{ method_field('patch') }}
                                     <input name="status" type="checkbox" value="0" style="display:none;" checked>
@@ -33,8 +36,8 @@
                     <h5>Draft</h5>
                     <article class="border">
                         @foreach($draftBlogs as $blog)
-                            <h2 class="px-2"><a href="{{ route('blogs.show', $blog->id) }}">{{ $blog->title }}</a></h2>
-                            <p class="px-2"> {!! str_limit($blog->body, 100) !!} </p>
+                            <h2 class="px-2"><a href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->title }}</a></h2>
+                            <p class="px-2"> {!! str_limit($blog->body, 50) !!} </p>
 
                             <form action="{{ route('blogs.update', $blog->id) }}" method="post" enctype="multipart/form-data">
                                 {{ method_field('patch') }}
