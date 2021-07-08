@@ -29,7 +29,7 @@ To get a local copy up and running follow these simple steps.
 - Open a terminal
 - Clone this repo using: `git clone "https://github.com/happiguru/Happi_Blog"`
 - Create a mysql database
-- Chnage mysql information on the env file
+- Change mysql information on the env file
 - Run `php artisan serve` on the terminal
 ## Open app in browser
 
