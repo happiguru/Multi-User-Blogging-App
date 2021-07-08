@@ -31,10 +31,33 @@ To get a local copy up and running follow these simple steps.
 - Create a mysql database
 - Change mysql information on the env file
 - Run `php artisan serve` on the terminal
+
+### Installation
+* Run `git clone https://github.com/LMS-Laravel/LMS-Laravel.git LMS-Laravel`
+* `cd LMS-Laravel` 
+* Run `composer install` (install composer beforehand)
+* From the projects root run `cp .env.example .env`
+* Configure your `.env` file, with:
+
+Database settings
+```
+DB_DATABASE=lms_laravel
+DB_USERNAME=root
+DB_PASSWORD=root
+```
+
+* Run `php artisan key:generate`
+* Run `php artisan migrate`
+* For Auth API (to configure Laravel Passport), run: `php artisan passport:install`
+* Run `npm install`
+* Run `php artisan db:seed`
+
+* Start the Laravel server `php artisan serve --port=8000`
+
 ## Open app in browser
 
 - When the program is running go to your browser
-- put: localhost:8000/posts
+- put: localhost:8000/
 - Click on login, register and Sign up as a new member
 - Enjoy the app
 
@@ -49,7 +72,7 @@ To get a local copy up and running follow these simple steps.
 ## 🤝 Contributing
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/happiguru/CRUD-APP/issues).
+Feel free to check the [issues page](https://github.com/happiguru/Multi-User-Blogging-App/issues).
 
 ## 📝 License
 This project is [MIT](lic.url) licensed.
