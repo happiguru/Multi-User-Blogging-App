@@ -1,12 +1,23 @@
-# Happi_Blog Built With Laravel (PHP, Mysql)
+![visitors](https://visitor-badge.glitch.me/badge?page_id=happiguru/Multi-User-Blogging-App)
+
+## Multi User Blogging App Built With Laravel (PHP, Mysql)
+
+This app is for multi-user blogging. Users can choose between being a subscriber, an author, or an administrator. Users have different levels of access depending on their responsibilities. Before they may do certain tasks, users must be authenticated. I've integrated Disqus and Mailtraps to make posting comments and sending bulk emails easier. It now has a slew of additional features.
 
 In this project I build a RESTFUL API/CRUD application using laravel.
+- Admin Dashboard
+- Multi Roles
+- Authentication
+- Eloquent and more
+
+![screenshot](screenshots.png)
 
 This project was built with:
 
 - PHP. v7.2.3
-- Laravel 8*
+- Laravel 5.6.*
 - Composer 2.0
+- Laravel File Manager
 
 ## 🛠 Getting Started
 ## Install 
@@ -18,7 +29,7 @@ To get a local copy up and running follow these simple steps.
 - Open a terminal
 - Clone this repo using: `git clone "https://github.com/happiguru/Happi_Blog"`
 - Create a mysql database
-- Chnage mysql information on the env file
+- Change mysql information on the env file
 - Run `php artisan serve` on the terminal
 ## Open app in browser
 
