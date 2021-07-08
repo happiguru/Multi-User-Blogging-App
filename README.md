@@ -1,4 +1,8 @@
-# Multi User Blogging App Built With Laravel (PHP, Mysql)
+![visitors](https://visitor-badge.glitch.me/badge?page_id=happiguru/Multi-User-Blogging-App)
+
+## Multi User Blogging App Built With Laravel (PHP, Mysql)
+
+This app is for multi-user blogging. Users can choose between being a subscriber, an author, or an administrator. Users have different levels of access depending on their responsibilities. Before they may do certain tasks, users must be authenticated. I've integrated Disqus and Mailtraps to make posting comments and sending bulk emails easier. It now has a slew of additional features.
 
 In this project I build a RESTFUL API/CRUD application using laravel.
 - Admin Dashboard
